@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <form action="/auth/join" method="post">
+        <table border="1">
+            <tr>
+                <td>
+                    <label>ID</label>
+                </td>
+                <td>
+                    <input type="text" name="username" id="username">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Password</label>
+                </td>
+                <td>
+                    <input type="password" name="password" id="password">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button style="float:right;" type="submit">Join</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><%=message%></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
