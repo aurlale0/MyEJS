@@ -1,0 +1,33 @@
+<% include ./header%>
+<div class="container">
+    <table class="table table-hover" style="cursor: default;">
+        <thead class="text-center">
+            <tr>
+                <td>번호</td>
+                <td>작성자</td>
+                <td>제목</td>
+                <td>조회수</td>
+                <td>수정일</td>
+                <td>등록일</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% 
+                for(var i=0; i<rows.length; i++){
+                var data = rows[i];
+            %>
+            <tr>
+                <td class="text-center"><%=data.idx%></td class="text-center">
+                <td class="text-center"><%=data.name%></td class="text-center">
+                <td><%=data.title%></td>
+                <td class="text-center"><%=data.hit%></td class="text-center">
+                <td class="text-center"><%=data.modidate%></td class="text-center">
+                <td class="text-center"><%=data.regdate%></td class="text-center">
+            </tr>
+            <%
+            }
+            %>
+        </tbody>
+    </table>
+</div>
+<% include ./footer%>
