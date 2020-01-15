@@ -2,9 +2,11 @@ var express = require('express');
 var router = express.Router();
 var session = require('express-session');
 
+var secretKeyConfig = require('dotenv').config();
+
 // session
 router.use(session({
-  secret: 'keyboard cat',
+  secret: process.env.SECRET_KEY,
   resave: false,
   saveUninitialized: true
 }));

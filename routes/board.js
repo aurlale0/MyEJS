@@ -5,9 +5,11 @@ var session = require('express-session');
 var mysql_odbc = require('../config/db_conn')();
 var conn = mysql_odbc.init();
 
+var secretKeyConfig = require('dotenv').config();
+
 // session
 router.use(session({
-    secret: 'keyboard cat',
+    secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: true
 }));
